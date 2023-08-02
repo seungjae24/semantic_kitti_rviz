@@ -1,0 +1,14 @@
+<launch>
+
+<rosparam command="load" file="$(find semantic_kitti_rviz)/config/kitti_color.yaml" />
+<node name="rviz" pkg="rviz" type="rviz" args="-d $(find semantic_kitti_rviz)/rviz/visualize_kitti.rviz"/>
+<node name="$(anon semantic_kitti_rviz)" pkg="semantic_kitti_rviz" type="semantic_kitti_rviz" output="screen">
+
+<rosparam param="/sequence">"02"</rosparam> 
+<rosparam param="/init_idx">1800</rosparam>
+<rosparam param="/data_path">"/media/sata_ssd/data/SemanticKITTI/sequences"</rosparam>
+<rosparam param="/stop_per_each_frame">true</rosparam>
+
+</node>
+
+</launch>
